@@ -1,0 +1,275 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Gillroy";
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+#main {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+#left {
+    position: relative;
+    width: 25%;
+    height: 100%; /* Fixed height for the left side */
+}
+
+#lnav {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 20px 30px;
+}
+
+#lnavr {
+    display: flex;
+    align-items: center;
+}
+
+#lnavr a {
+    margin-right: 20px;
+    text-decoration: none;
+    color: black;
+    font-weight: 500%;
+    font-size: 20px;
+}
+
+#lnavr i {
+    color: royalblue;
+}
+
+#left #textcenter {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    padding: 10px;
+    background-color: white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+}
+
+#conversation {
+    margin-bottom: 80px;
+}
+
+#textcenter textarea {
+    flex: 1;
+    width: 80%;
+    margin-right: 10px;
+    resize: none;
+    height: 50px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+#textcenter input[type="image"] {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    margin: 0;
+}
+
+#textcenter h1 {
+    font-size: 8vw;
+    font-weight: 100;
+}
+
+#textcenter p {
+    opacity: #000;
+    font-size: 20px;
+    line-height: 18px;
+    margin-top: 18px;
+    margin-bottom: 20px;
+}
+
+#textcenter a {
+    text-decoration: none;
+    color: black;
+    border-bottom: 1px solid #000;
+    padding-bottom: 5px;
+    font-size: 13px;
+    font-weight: 600;
+    opacity: #000;
+    width: 60%;
+    margin: auto;
+}
+
+#right {
+    position: relative;
+    margin-right: 5px;
+    width: 75%;
+    height: 120%; /* Default height */
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    transition: height 0.3s ease; /* Smooth transition when height changes */
+}
+
+#right.expanded {
+    height: 150%; /* Expanded height when a tile is clicked */
+}
+
+#rtop, #rbottom {
+    display: flex;
+    width: 100%;
+    height: 50%;
+}
+
+.division {
+    display: flex;
+    width: 33.3%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.division:hover {
+    transform: scale(1.1);
+    z-index: 2;
+}
+
+#background1, #background2, #background3, #background4, #background5, #background6 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    filter: blur(5px);
+    z-index: 0;
+}
+
+#background1 {
+    background-image: url(/Image/1.jpg);
+}
+
+#background2 {
+    background-image: url(/Image/2.jpeg);
+}
+
+#background3 {
+    background-image: url(/Image/3.jpg);
+}
+
+#background4 {
+    background-image: url(/Image/4.avif);
+}
+
+#background5 {
+    background-image: url(/Image/5.jpg);
+}
+
+#background6 {
+    background-image: url(/Image/6.jpg);
+}
+
+#content {
+    position: relative;
+    z-index: 1;
+    color: #ffffff;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    font-size: 20px;
+}
+
+#content h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+#content p {
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.key-points {
+    font-size: 16px;
+}
+
+.key-points h4 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.key-points ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    text-align: left;
+    margin: 0;
+}
+
+.key-points li {
+    margin-bottom: 5px;
+}
+
+.category, .category-bottom {
+    text-align: center;
+    font-size: 24px;
+    color: black;
+    padding: 10px;
+    background: #f0f0f0;
+    border-bottom: 2px solid #ccc;
+    width: 100%;
+}
+
+.category-bottom {
+    border-top: 2px solid #ccc;
+}
+
+/* #dynamic-content {
+    width: 100%;
+    height: 30%;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-y: auto;
+    background-color: hwb(87 59% 18%);
+    margin-top: 10px;
+} */
+
+#conversation {
+    max-height: 525px;
+    overflow-y: auto;
+}
+
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popup-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    width: 80%;
+    max-width: 400px;
+}
+
+.close {
+    cursor: pointer;
+    float: right;
+    font-size: 24px;
+}
