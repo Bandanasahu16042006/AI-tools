@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/index1.css">
+</head>
+<body>
+    <div id="main">
+        <div id="left">
+            <div id="lnav">
+                <div id="lnavr">
+                    <a href="">Home</a>
+                    <a href="tempelates/">Login</a>
+                 </div>
+            </div>
+            <div id="textcenter">
+                <h1 id="greeting" style="margin-left: 10px;">Hello,</h1>
+                <textarea id="question" placeholder="Chat With Me" oninput="this.style.height = ''; this.style.height = this.scrollHeight + 'px'" onkeydown="if(event.key === 'Enter'){ event.preventDefault(); submitQuestion(); }"></textarea>
+                <input type="image" alt="submit" src="icon/ask.png" onclick="submitQuestion()">
+                <p id="message" style="margin-left: 10px; margin-top: 5px;"></p>
+            </div>
+            <div id="conversation" style="margin-top: 20px; margin-left: 10px;"></div>
+        </div>
+        <div id="right">
+            <div class="category">AI For Art</div>
+            <div id="rtop">
+                <div class="division" id="rtopleft" onclick="loadContent('rtopleft')">
+                    <div id="background1"></div>
+                    <div id="content">
+                        <h3>Unsummary</h3>
+                        <p>AI tool for generating concise summaries of lengthy documents.</p>
+                        <div class="key-points">
+                            <h4>Key Points:</h4>
+                            <ul>
+                                <li>Generates summaries for articles, research papers, and other lengthy texts.</li>
+                                <li>Helps users quickly grasp the key points of complex materials.</li>
+                                <li>Ideal for students, researchers, and professionals.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="division" id="rtopmiddle" onclick="loadContent('rtopmiddle')">
+                    <div id="background2"></div>
+                    <div id="content">
+                        <h3>DiffusionArt</h3>
+                        <p>Platform for generating AI-based artwork using diffusion models.</p>
+                        <div class="key-points">
+                            <h4>Key Points:</h4>
+                            <ul>
+                                <li>Uses advanced AI models to generate high-quality digital art.</li>
+                                <li>Offers various customization options to tweak the output.</li>
+                                <li>Suitable for both artists and non-artists interested in creating digital art.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="division" id="rtopright" onclick="loadContent('rtopright')">
+                    <div id="background3"></div>
+                    <div id="content">
+                        <h3>Imagine.Art</h3>
+                        <p>Generative art platform that allows users to create and customize AI art.</p>
+                        <div class="key-points">
+                            <h4>Key Points:</h4>
+                            <ul>
+                                <li>Offers a wide range of styles and themes for generating artwork.</li>
+                                <li>Provides tools for modifying and refining AI-generated art.</li>
+                                <li>Emphasizes ease of use, making it accessible to a broad audience.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <div id="dynamic-content">
+                
+            </div> -->
+            <div class="category-bottom">AI For Coding</div>
+            <div id="rbottom">
+                <div class="division" id="rbottomleft" onclick="loadContent('rbottomleft')">
+                    <div id="background4"></div>
+                    <div id="content">
+                        <h3>MixArt</h3>
+                        <p>AI-powered art creation tool for blending various artistic styles.</p>
+                        <div class="key-points">
+                            <h4>Key Points:</h4>
+                            <ul>
+                                <li>Allows blending of different artistic styles to create new and original pieces.</li>
+                                <li>Offers customization options to fine-tune the generated artwork.</li>
+                                <li>Supports collaboration between AI and human creativity.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="division" id="rbottommiddle" onclick="loadContent('rbottommiddle')">
+                    <div id="background5"></div>
+                    <div id="content">
+                        <h3>TutorAI</h3>
+                        <p>AI-driven platform providing personalized learning experiences.</p>
+                        <div class="key-points">
+                            <h4>Key Points:</h4>
+                            <ul>
+                                <li>Provides interactive lessons and explanations tailored to the user's learning pace.</li>
+                                <li>Covers a wide range of subjects, making it a versatile tool for students of all ages.</li>
+                                <li>Offers instant feedback and guidance, simulating a one-on-one tutoring experience.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="division" id="rbottomright" onclick="loadContent('rbottomright')">
+                    <div id="background6"></div>
+                    <div id="content">
+                        <h3>Phind</h3>
+                        <p>AI search engine designed for technical and educational purposes.</p>
+                        <div class="key-points">
+                            <h4>Key Points:</h4>
+                            <ul>
+                                <li>Focuses on delivering precise answers to queries related to programming, technology, and education.</li>
+                                <li>Saves time by filtering out irrelevant information and presenting the most pertinent results.</li>
+                                <li>Suitable for both students and professionals seeking in-depth knowledge on specific topics.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="popup" class="popup" style="display: none;">
+                <div class="popup-content">
+                    <span class="close" onclick="closePopup()">&times;</span>
+                    <div id="popup-text"></div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
+    <script src="js/index1.js"></script>
+</body>
+</html>

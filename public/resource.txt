@@ -1,0 +1,8 @@
+18 Lessons teaching everything you need to know to start building Generative AI applications :-
+https://github.com/microsoft/generative-ai-for-beginners
+
+Nural network zero to hero :-
+https://www.youtube.com/watch?v=VMj-3S1tku0&list=PLAqhIrjkxbuWI23v9cThsA9GvCAUhRvKZ
+
+Transformer from 3 blue 1 brown :-
+https://www.youtube.com/watch?v=eMlx5fFNoYc

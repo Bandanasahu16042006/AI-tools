@@ -1,0 +1,29 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+#india-map, #state-map {
+    width: 80%;
+    margin: 0 auto;
+}
+
+svg {
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+}
+
+#post-grievance {
+    margin-top: 20px;
+}
+
+#grievance-form textarea {
+    width: 100%;
+    height: 100px;
+}
+
+#grievance-form button {
+    margin-top: 10px;
+}
+

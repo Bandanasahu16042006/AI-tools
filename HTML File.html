@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Content</title>
+    <style>
+        .content { margin-top: 20px; }
+        .link { cursor: pointer; color: blue; text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <h1>Dynamic Content Example</h1>
+    <div id="buttons">
+        <span class="link" onclick="loadContent('content1')">Content 1</span> |
+        <span class="link" onclick="loadContent('content2')">Content 2</span>
+    </div>
+    <div id="dynamic-content" class="content">
+        <!-- Dynamic content will be loaded here -->
+    </div>
+
+    <script>
+        function loadContent(contentId) {
+            let content = {
+                'content1': '<p>This is the content for Content 1.</p>',
+                'content2': '<p>This is the content for Content 2.</p>'
+            };
+            document.getElementById('dynamic-content').innerHTML = content[contentId];
+            history.pushState({content: contentId}, '', `?content=${contentId}`);
+        }
+
+        window.onpopstate = function(event) {
+            if (event.state && event.state.content) {
+                let content = {
+                    'content1': '<p>This is the content for Content 1.</p>',
+                    'content2': '<p>This is the content for Content 2.</p>'
+                };
+                document.getElementById('dynamic-content').innerHTML = content[event.state.content];
+            } else {
+                document.getElementById('dynamic-content').innerHTML = '';
+            }
+        };
+
+        // Load content based on URL parameter if available
+        window.onload = function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const contentId = urlParams.get('content');
+            if (contentId) {
+                loadContent(contentId);
+            }
+        };
+    </script>
+</body>
+</html>
